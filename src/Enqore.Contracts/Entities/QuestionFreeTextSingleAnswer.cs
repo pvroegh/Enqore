@@ -1,5 +1,5 @@
 ﻿namespace Enqore.Contracts.Entities;
-public class QuestionFreeTextSingleAnswer : Question
+public class QuestionFreeTextSingleAnswer : QuestionBase
 {
 
 }

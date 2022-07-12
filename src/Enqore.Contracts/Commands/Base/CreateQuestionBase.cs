@@ -1,4 +1,4 @@
-﻿namespace Enqore.Contracts.Commands;
+﻿namespace Enqore.Contracts.Commands.Base;
 public abstract class CreateQuestionBase : IRequest<Guid>
 {
     public string Title { get; init; } = string.Empty;

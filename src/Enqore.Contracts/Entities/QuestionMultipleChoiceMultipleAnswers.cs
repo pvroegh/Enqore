@@ -1,5 +1,5 @@
 ﻿namespace Enqore.Contracts.Entities;
-public class QuestionMultipleChoiceMultipleAnswers : QuestionMultipleChoice
+public class QuestionMultipleChoiceMultipleAnswers : QuestionMultipleChoiceBase
 {
 
 }
