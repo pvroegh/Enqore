@@ -52,4 +52,39 @@ public class CreateQuestionBaseValidatorTests
         // Assert
         validationResult.ShouldHaveValidationErrorFor(v => v.Title);
     }
+
+
+    [Fact]
+    public void Validate_QuestionnaireIdIsEmpty_ValidationFails()
+    {
+        // Arrange
+        var validator = new CreateQuestionMultipleChoiceMultipleAnswersValidator();
+        var validatee = new CreateQuestionMultipleChoiceMultipleAnswers()
+        {
+            QuestionnaireId = Guid.Empty
+        };
+
+        // Act
+        var validationResult = validator.TestValidate(validatee);
+
+        // Assert
+        validationResult.ShouldHaveValidationErrorFor(v => v.QuestionnaireId);
+    }
+
+    [Fact]
+    public void Validate_QuestionnaireIdIsAValidGuid_ValidationSucceeds()
+    {
+        // Arrange
+        var validator = new CreateQuestionMultipleChoiceMultipleAnswersValidator();
+        var validatee = new CreateQuestionMultipleChoiceMultipleAnswers()
+        {
+            QuestionnaireId = Guid.NewGuid()
+        };
+
+        // Act
+        var validationResult = validator.TestValidate(validatee);
+
+        // Assert
+        validationResult.ShouldNotHaveValidationErrorFor(v => v.QuestionnaireId);
+    }
 }

@@ -1,4 +1,4 @@
 ﻿namespace Enqore.Contracts.Commands;
-public sealed class CreateQuestionMultipleChoiceSingleAnswer : CreateQuestionMultipleAnswersBase
+public sealed class CreateQuestionMultipleChoiceSingleAnswer : CreateQuestionMultipleChoicesBase
 {
 }

@@ -12,7 +12,7 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validatee = new CreateQuestionMultipleChoiceMultipleAnswers()
         {
             Title = "What's your favorite Star Wars character?",
-            PossibleAnswers = new[]
+            PossibleChoices = new[]
             {
                 new Answer() { Value = "Jar Jar Binks" }
             }
@@ -22,7 +22,7 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validationResult = validator.TestValidate(validatee);
 
         // Assert
-        validationResult.ShouldHaveValidationErrorFor(v => v.PossibleAnswers);
+        validationResult.ShouldHaveValidationErrorFor(v => v.PossibleChoices);
     }
 
     [Fact]
@@ -33,7 +33,7 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validatee = new CreateQuestionMultipleChoiceMultipleAnswers()
         {
             Title = "What's your favorite Star Wars character?",
-            PossibleAnswers = new[]
+            PossibleChoices = new[]
             {
                 new Answer() { Value = "Darth Vader" },
                 new Answer() { Value = "Luke Skywalker" },
@@ -53,7 +53,7 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validationResult = validator.TestValidate(validatee);
 
         // Assert
-        validationResult.ShouldHaveValidationErrorFor(v => v.PossibleAnswers);
+        validationResult.ShouldHaveValidationErrorFor(v => v.PossibleChoices);
     }
 
     [Fact]
@@ -64,7 +64,7 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validatee = new CreateQuestionMultipleChoiceMultipleAnswers()
         {
             Title = "What's your favorite Star Wars character?",
-            PossibleAnswers = new[]
+            PossibleChoices = new[]
             {
                 new Answer() { Value = "Darth Vader" },
                 new Answer() { Value = "Luke Skywalker" },
@@ -83,6 +83,6 @@ public class CreateQuestionMultipleAnswersBaseValidatorTests
         var validationResult = validator.TestValidate(validatee);
 
         // Assert
-        validationResult.ShouldNotHaveValidationErrorFor(v => v.PossibleAnswers);
+        validationResult.ShouldNotHaveValidationErrorFor(v => v.PossibleChoices);
     }
 }
