@@ -25,6 +25,10 @@ public class DummyHandler : IRequestHandler<CreateQuestionnaire, Questionnaire>
 {
     Task<Questionnaire> IRequestHandler<CreateQuestionnaire, Questionnaire>.Handle(CreateQuestionnaire request, CancellationToken cancellationToken)
     {
-        return Task.FromResult<Questionnaire>(null);
+        return Task.FromResult(new Questionnaire()
+        {
+            Id = Guid.NewGuid(),
+            Title = request.Title
+        });
     }
 }
