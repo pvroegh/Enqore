@@ -11,7 +11,7 @@ public class CreateQuestionBaseValidatorTests
         {
             Title = string.Empty
         };
-        
+
         // Act
         var validationResult = validator.TestValidate(validatee);
 

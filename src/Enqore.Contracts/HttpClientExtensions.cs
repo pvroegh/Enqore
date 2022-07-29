@@ -22,7 +22,14 @@ public static class HttpClientExtensions
         else if (response.StatusCode == System.Net.HttpStatusCode.BadRequest)
         {
             var value = await response.Content.ReadFromJsonAsync<ValidationDetails>();
-            throw new ValidationException("bla");
+            if (value != null && value.Errors != null)
+            {
+                throw new ValidationException(
+                    value
+                        .Errors
+                        .SelectMany(kvp => kvp.Value.Select(error => new { Property = kvp.Key, ValidationError = error }))
+                        .Select(error => new ValidationFailure(error.Property, error.ValidationError)));
+            }
         }
         
         throw new InvalidOperationException();
