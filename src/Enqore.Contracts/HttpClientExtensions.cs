@@ -1,11 +1,5 @@
 ﻿using Enqore.Contracts.Validation;
 using FluentValidation.Results;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Enqore.Contracts;
 public static class HttpClientExtensions
@@ -31,7 +25,12 @@ public static class HttpClientExtensions
                         .Select(error => new ValidationFailure(error.Property, error.ValidationError)));
             }
         }
+        else if (response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+        {
+            var errorMessage = await response.Content.ReadAsStringAsync();
+            throw new ValidationException(errorMessage);
+        }
         
-        throw new InvalidOperationException();
+        throw new InvalidOperationException($"Unhandled response. Status code: {response.StatusCode}.");
     }
 }
