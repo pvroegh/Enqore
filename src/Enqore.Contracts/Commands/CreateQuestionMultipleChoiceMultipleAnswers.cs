@@ -1,5 +1,5 @@
 ﻿namespace Enqore.Contracts.Commands;
-public sealed class CreateQuestionMultipleChoiceMultipleAnswers : CreateQuestionMultipleChoicesBase
+public sealed class CreateQuestionMultipleChoiceMultipleAnswers : CreateQuestionMultipleChoicesBase<QuestionMultipleChoiceMultipleAnswers>
 {
 }
 
@@ -7,7 +7,7 @@ public class CreateQuestionMultipleChoiceMultipleAnswersValidator : AbstractVali
 {
     public CreateQuestionMultipleChoiceMultipleAnswersValidator()
     {
-        RuleFor(v => v).SetValidator(new CreateQuestionMultipleAnswersBaseValidator());
+        RuleFor(v => v).SetValidator(new CreateQuestionMultipleAnswersBaseValidator<CreateQuestionMultipleChoiceMultipleAnswers, QuestionMultipleChoiceMultipleAnswers>());
     }
 }
 

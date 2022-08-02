@@ -19,6 +19,11 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.MapRequest<CreateQuestionnaire, Questionnaire>();
+app.MapRequest<CreateQuestionMultipleChoiceMultipleAnswers, QuestionMultipleChoiceMultipleAnswers>();
+app.MapRequest<CreateQuestionMultipleChoiceSingleAnswer, QuestionMultipleChoiceSingleAnswer>();
+app.MapRequest<CreateQuestionFreeTextMultipleAnswers, QuestionFreeTextMultipleAnswers>();
+app.MapRequest<CreateQuestionFreeTextSingleAnswer, QuestionFreeTextSingleAnswer>();
+app.MapRequest<CreateQuestionNumberRange, QuestionNumberRange>();
 
 app.Run();
 

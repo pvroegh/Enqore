@@ -1,11 +1,14 @@
 ﻿namespace Enqore.Contracts.Commands.Base;
-public abstract class CreateQuestionBase : IRequest<QuestionBase>
+public abstract class CreateQuestionBase<TQuestion> : IRequest<TQuestion>
+    where TQuestion : QuestionBase
 {
     public Guid QuestionnaireId { get; init; }
     public string Title { get; init; } = string.Empty;
 }
 
-public class CreateQuestionBaseValidator : AbstractValidator<CreateQuestionBase>
+public class CreateQuestionBaseValidator<TQuestionRequest, TQuestion> : AbstractValidator<TQuestionRequest>
+    where TQuestionRequest : CreateQuestionBase<TQuestion>
+    where TQuestion : QuestionBase 
 {
     public CreateQuestionBaseValidator()
     {

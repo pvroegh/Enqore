@@ -1,5 +1,5 @@
 ﻿namespace Enqore.Contracts.Commands;
-public sealed class CreateQuestionFreeTextSingleAnswer : CreateQuestionBase
+public sealed class CreateQuestionFreeTextSingleAnswer : CreateQuestionBase<QuestionFreeTextSingleAnswer>
 {
 }
 
@@ -7,6 +7,6 @@ public class CreateQuestionFreeTextSingleAnswerValidator : AbstractValidator<Cre
 {
     public CreateQuestionFreeTextSingleAnswerValidator()
     {
-        RuleFor(v => v).SetValidator(new CreateQuestionBaseValidator());
+        RuleFor(v => v).SetValidator(new CreateQuestionBaseValidator<CreateQuestionFreeTextSingleAnswer, QuestionFreeTextSingleAnswer>());
     }
 }

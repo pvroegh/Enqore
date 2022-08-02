@@ -1,11 +1,13 @@
-﻿namespace Enqore.API;
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Enqore.API;
 
 public static class ApiEndpointRegistration
 {
     public static void MapRequest<TRequest, TResponse>(this WebApplication app)
         where TRequest : IRequest<TResponse>
     {
-        app.MapPost($"/{typeof(TRequest).Name}", async (IMediator mediator, IValidator<TRequest>? validator, TRequest request, CancellationToken cancellationToken) =>
+        app.MapPost($"/{typeof(TRequest).Name}", async ([FromServices] IMediator mediator, [FromServices] IValidator<TRequest>? validator, [FromBody] TRequest request, CancellationToken cancellationToken) =>
         {
             if (validator != null)
             {

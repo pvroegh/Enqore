@@ -1,5 +1,5 @@
 ﻿namespace Enqore.Contracts.Commands;
-public sealed class CreateQuestionFreeTextMultipleAnswers : CreateQuestionBase
+public sealed class CreateQuestionFreeTextMultipleAnswers : CreateQuestionBase<QuestionFreeTextMultipleAnswers>
 {
     public int NumberOfAnswers { get; init; }
 }

@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<InternalsVisibleTo Include="Enqore.API.Tests" />
+		<InternalsVisibleTo Include="Enqore.IntegrationTests" />
 	</ItemGroup>
 
 	<ItemGroup>
