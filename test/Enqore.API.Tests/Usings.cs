@@ -1,9 +1,0 @@
-﻿global using Enqore.Contracts;
-global using Enqore.Contracts.Commands;
-global using Enqore.Contracts.Entities;
-global using FluentAssertions;
-global using FluentValidation;
-global using Microsoft.AspNetCore.Mvc.Testing;
-global using System.Net.Http;
-global using System.Threading.Tasks;
-global using Xunit;
