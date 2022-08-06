@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enqore.Contracts.UnitTests"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enqore.API", "src\Enqore.API\Enqore.API.csproj", "{6361FB2F-267E-4191-A38E-794D30E77D5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enqore.IntegrationTests", "test\Enqore.IntegrationTests\Enqore.IntegrationTests.csproj", "{BC29F560-535D-4E9A-99F6-7B8FDC201D7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enqore.IntegrationTests", "test\Enqore.IntegrationTests\Enqore.IntegrationTests.csproj", "{BC29F560-535D-4E9A-99F6-7B8FDC201D7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enqore.Website", "src\Enqore.Website\Enqore.Website.csproj", "{7E6A9481-3DAA-4DEB-BA9B-E758D0040462}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Enqore.Website", "src\Enqore.Website\Enqore.Website.csproj", "{7E6A9481-3DAA-4DEB-BA9B-E758D0040462}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

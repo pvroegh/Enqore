@@ -1,0 +1,21 @@
+﻿@inject NavigationManager NavManager
+
+<form class="row g-3 justify-content-center">
+  <div class="col-sm-4 col-12">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control" id="idToJoin" placeholder="Questionnaire ID" aria-label="Questionnaire ID" aria-describedby="join-questionnaire-button" @bind="QuestionnaireId">
+      <button class="btn btn-outline-primary" type="button" id="join-questionnaire-button" @onclick="OnJoinQuestionnaireButtonClick">Join</button>
+    </div>
+  </div>
+</form>
+
+@code {
+
+    private string? QuestionnaireId { get; set; }
+
+    private void OnJoinQuestionnaireButtonClick()
+    {
+        NavManager.NavigateTo($"/participate/{QuestionnaireId}");
+    }
+
+}
